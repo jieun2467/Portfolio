@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>구전향주 WEB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--파비콘 연결-->
+    <link rel="shortcut icon" href="./WEB_img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .bg {
+            background-color: #202e48;
+        }
+
+        .fixed_box {
+            position: fixed;
+            bottom: 40px;
+            right: 30px;
+            width: 40px;
+        }
+
+        #top {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        #top img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <!--배경색 설정-->
+        <div id="top">
+            <img src="./WEB_img/01.jpg" class="guide1">
+            <img src="./WEB_img/02.jpg" class="guide2">
+            <img src="./WEB_img/03.jpg" class="guide3">
+            <img src="./WEB_img/04.jpg" class="guide4">
+            <img src="./WEB_img/05.jpg" class="guide5">
+            <img src="./WEB_img/06.jpg" class="guide6">
+            <img src="./WEB_img/07.jpg" class="guide7">
+            <img src="./WEB_img/08.jpg" class="guide8">
+            <img src="./WEB_img/09.jpg" class="guide9">
+            <img src="./WEB_img/10.jpg" class="guide10">
+            <img src="./WEB_img/11.jpg" class="guide11">
+            <img src="./WEB_img/12.jpg" class="guide12">
+            <img src="./WEB_img/13.jpg" class="guide13">
+            <img src="./WEB_img/14.jpg" class="guide14">
+            <img src="./WEB_img/15.jpg" class="guide15">
+            <img src="./WEB_img/16.jpg" class="guide16">
+            <img src="./WEB_img/17.jpg" class="guide17">
+            <img src="./WEB_img/18.jpg" class="guide18">
+            <img src="./WEB_img/19.jpg" class="guide19">
+            <img src="./WEB_img/20.jpg" class="guide20">
+            <img src="./WEB_img/21.jpg" class="guide21">
+        </div><!--top-->
+    </div><!--bg-->
+
+    <div class="fixed_box">
+        <a href="#top" class="top_btn"><!--href부분은 이미지를 감싼 div에 있는 id이름과 동일하게 설정.-->
+            <img src="./WEB_img/top.png" alt="top">
+        </a>
+    </div><!--fixed_box-->
+
+
+    <!--이동시 부드럽게 이동시키기 위해 추가한 구문 시작. script쪽 전부 삭제가능.-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top
+                        }, 500);//움직이는 시간 조정
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+    <!--이동시 부드럽게 이동시키기 위해 추가한 구문 끝. 삭제가능.-->
+</body>
+
+</html>
